@@ -1,0 +1,369 @@
+/* Importar fuentes desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Roboto+Mono:wght@400;700&display=swap');
+
+/* Reset y configuración base */
+body {
+    font-family: 'Roboto Mono', monospace;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(50deg, #1e3c72, #2a5298); /* Fondo degradado azul */
+    color: #fff; /* Texto blanco */
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Encabezado */
+header {
+    position: relative;
+    background: linear-gradient(45deg, #43cea2, #D8BFD8); /* Degradado verde a azul */
+    color: #000000;
+    padding: 2rem 0;
+    text-align: center;
+    border-bottom: 3px solid #f4436;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-family: 'Bungee Inline', cursive;
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px #f4436; /* Sombra rosa */
+    animation: pulse 3s infinite alternate, glitch 1s infinite;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 0.05em 0 0 #00ff00, -0.03em -0.04em 0 #ff0000, 0.025em 0.04em 0 #0000ff;
+    }
+    14% {
+        text-shadow: 0.05em 0 0 #00ff00, -0.03em -0.04em 0 #ff0000, 0.025em 0.04em 0 #0000ff;
+    }
+    15% {
+        text-shadow: none;
+    }
+    49% {
+        text-shadow: none;
+    }
+    50% {
+        text-shadow: 0.05em 0 0 #00ff00, -0.03em -0.04em 0 #ff0000, 0.025em 0.04em 0 #0000ff;
+    }
+    99% {
+        text-shadow: 0.05em 0 0 #00ff00, -0.03em -0.04em 0 #ff0000, 0.025em 0.04em 0 #0000ff;
+    }
+    100% {
+        text-shadow: none;
+    }
+}
+
+/* Navegación */
+nav ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1.5rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+    display: inline-block;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+nav a:hover {
+    color: #f4436;
+    transform: translateY(-5px);
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* 🔹 Barra de navegación */
+nav {
+    background: #696969;
+    box-shadow: 0 2px 5px rgba(0, 255, 200, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 12px 20px;
+    display: inline-block;
+    font-weight: bold;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    border-bottom: 3px solid #00ffc8;
+    color: #00ffc8;
+}
+
+/* 🔸 Enlace activo (página actual) */
+nav a.activo {
+    border-bottom: 3px solid #00ffc8;
+    color: #00ffc8;
+}
+
+/* Contenido principal */
+.content {
+    padding: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilos para secciones con imagen */
+.seccion-con-imagen {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    background: rgba(255, 255, 255, 0.1); /* Fondo blanco transparente */
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.seccion-con-imagen:hover {
+    transform: translateY(-5px);
+}
+
+.texto-seccion {
+    width: 55%;
+}
+
+.imagen-seccion {
+    width: 40%;
+}
+
+.imagen-seccion img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease, filter 0.5s ease;
+    filter: hue-rotate(0deg); /* Inicial */
+}
+
+.imagen-seccion img:hover {
+    transform: rotate(10deg) scale(1.1);
+    filter: hue-rotate(180deg); /* Cambia los colores */
+}
+
+/* Títulos y texto */
+h2 {
+    font-family: 'Bungee Inline', cursive;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px #f4436;
+    animation: fadeIn 2s ease;
+}
+
+h3 {
+    font-family: 'Bungee Inline', cursive;
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #f4436;
+    animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+ul {
+    list-style: disc;
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+li {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos para tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+th,
+td {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1rem;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+th {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Formulario de contacto */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+input,
+textarea {
+    padding: 1rem;
+    margin-top: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro transparente */
+    color: #fff;
+}
+
+button {
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+    background-color: #8e44ad; /* Morado */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #9b59b6; /* Morado más claro al pasar el ratón */
+    transform: scale(1.1);
+}
+
+/* Estilos para la navegación del formulario */
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.form-navigation button {
+    padding: 1rem 2rem;
+    background-color: #8e44ad;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.form-navigation button:hover {
+    background-color: #9b59b6;
+    transform: scale(1.1);
+}
+
+.video-final {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.video-final video,
+.video-final iframe {
+    border-radius: 12px;
+    box-shadow: 0 0 20px #00ffc8;
+}
+
+
+/* 🔹 Botones de navegación */
+.botones-navegacion {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.boton {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    font-size: 1em;
+    border: 2px solid #00ffc8;
+    border-radius: 8px;
+    color: #00ffc8;
+    background: transparent;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background: #00ffc8;
+    color: #0a0a0a;
+    box-shadow: 0 0 15px #00ffc8;
+}
+
+/* Pie de página */
+footer {
+    text-align: center; /* Centrar el texto */
+    padding: 2rem 0;
+    background-color: #000;
+    color: #f4436;
+    border-top: 3px solid #f4436;
+}
