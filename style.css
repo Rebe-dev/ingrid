@@ -1,294 +1,322 @@
-/* === Importar fuentes desde Google Fonts === */
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Roboto+Mono:wght@400;700&display=swap');
-
-/* === Reset y configuración base === */
+/* === Estilo base === */
 body {
     font-family: 'Roboto Mono', monospace;
     margin: 0;
     padding: 0;
-    background: linear-gradient(50deg, #1e3c72, #2a5298);
-    color: #fff;
+    background: linear-gradient(54deg, #4527a0, #2E8B57, #FFA07A, #8FBC8B, #00897b, #8FBC8B);
+    background-size: 300% 300%;
+    animation: gradientAnimation 20s infinite alternate;
+    color: #f0f0f0;
     line-height: 1.6;
     overflow-x: hidden;
+    font-size: 1em;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* === Encabezado === */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
 header {
     position: relative;
-    background: linear-gradient(45deg, #43cea2, #D8BFD8);
-    color: #000;
+    background-color: #333;
+    color: #fff;
     padding: 2rem 0;
     text-align: center;
-    border-bottom: 3px solid #f4436;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 header h1 {
-    font-family: 'Bungee Inline', cursive;
-    font-size: 4rem;
-    margin-bottom: 0.5rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    text-shadow: 0 0 20px #f4436;
-    animation: pulse 3s infinite alternate, glitch 1s infinite;
-}
-
-@keyframes pulse {
-    from { transform: scale(1); }
-    to { transform: scale(1.1); }
+    font-size: 2.5rem;
+    margin: 0.5rem;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #0ff;
+    animation: glitch 2s infinite;
 }
 
 @keyframes glitch {
-    0%, 14% { text-shadow: 0.05em 0 0 #00ff00, -0.03em -0.04em 0 #ff0000, 0.025em 0.04em 0 #0000ff; }
-    15%, 49% { text-shadow: none; }
-    50%, 99% { text-shadow: 0.05em 0 0 #00ff00, -0.03em -0.04em 0 #ff0000, 0.025em 0.04em 0 #0000ff; }
-    100% { text-shadow: none; }
-}
-
-/* === Navegación === */
-nav {
-    background: #696969;
-    box-shadow: 0 2px 5px rgba(0, 255, 200, 0.2);
+    0% { transform: translate(0); }
+    20% { transform: translate(-5px, 5px); }
+    40% { transform: translate(-5px, -5px); }
+    60% { transform: translate(5px, 5px); }
+    80% { transform: translate(5px, -5px); }
+    100% { transform: translate(0); }
 }
 
 nav ul {
-    list-style: none;
-    margin: 0;
     padding: 0;
+    list-style: none;
     display: flex;
     justify-content: center;
-    gap: 30px;
+    flex-wrap: wrap;
 }
 
-nav ul li { margin: 0 1.5rem; }
+nav ul li {
+    margin: 0.5rem 1rem;
+}
 
 nav a {
+    color: #0f0;
     text-decoration: none;
-    color: #ffffff;
-    padding: 12px 20px;
-    display: inline-block;
     font-weight: bold;
     font-size: 1.2rem;
-    border-bottom: 3px solid transparent;
-    transition: 0.3s;
-    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+    padding: 0.5rem 1rem;
+    border: 2px solid #0f0;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
 nav a:hover {
-    border-bottom: 3px solid #00ffc8;
-    color: #00ffc8;
+    background-color: #0f0;
+    color: #121212;
+    text-shadow: 0 0 5px #0f0, 0 0 10px #0f0;
 }
 
-nav a.activo {
-    border-bottom: 3px solid #00ffc8;
-    color: #00ffc8;
+.main-content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
 }
 
-/* === Contenido principal === */
-.content {
-    padding: 4rem;
+.content-block {
+    width: 90%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin-bottom: 30px;
+    background-color: #212121;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: left;
 }
 
-/* === Secciones con imagen === */
-.seccion-con-imagen {
+.content-block h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #0ff;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+    text-align: center;
+}
+
+.layout-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 3rem;
-    background: rgba(255,255,255,0.1);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255,255,0.2);
-    transition: transform 0.3s ease;
+    padding: 20px;
+    flex-wrap: wrap;
 }
 
-.seccion-con-imagen:hover { transform: translateY(-5px); }
+.text-area {
+    flex: 1;
+    padding-right: 20px;
+    text-align: left;
+    min-width: 250px;
+}
 
-.texto-seccion { width: 55%; }
-.imagen-seccion { width: 40%; }
+.text-area p {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
 
-.imagen-seccion img {
+.image-area {
+    flex: 1;
+    text-align: center;
+    min-width: 250px;
+    margin-top: 20px;
+}
+
+.image-area img {
     max-width: 100%;
     height: auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    transition: transform 0.5s ease, filter 0.5s ease;
-    filter: hue-rotate(0deg);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
-.imagen-seccion img:hover {
-    transform: rotate(10deg) scale(1.1);
-    filter: hue-rotate(180deg);
+.image-area img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.6);
 }
 
-/* === Títulos y texto === */
-h2 {
-    font-family: 'Bungee Inline', cursive;
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
-    color: #fff;
-    text-transform: uppercase;
-    text-shadow: 0 0 15px #f4436;
-    animation: fadeIn 2s ease;
-}
-
-h3 {
-    font-family: 'Bungee Inline', cursive;
-    font-size: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    color: #fff;
-    text-transform: uppercase;
-    text-shadow: 0 0 10px #f4436;
-    animation: fadeIn 2s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-p, li {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-    color: #fff;
-    text-shadow: 0 0 5px rgba(0,0,0,0.5);
-}
-
-ul { list-style: disc; padding-left: 2rem; margin-bottom: 1.5rem; }
-
-/* === Tablas === */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 2rem;
-    background: rgba(255,255,255,0.1);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    margin-top: 20px;
+    word-wrap: break-word;
 }
 
 th, td {
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 1rem;
+    border: 2px solid #B0C4DE;
+    padding: 0.8rem;
+    font-size: 0.8rem;
     text-align: left;
-    font-size: 0.9rem;
 }
 
 th {
-    background-color: rgba(0,0,0,0.5);
-    color: #fff;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-/* === Formularios === */
-form { display: flex; flex-direction: column; }
-
-label { margin-top: 1.5rem; font-weight: bold; color: #fff; }
-
-input, textarea {
-    padding: 1rem;
-    margin-top: 0.5rem;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    background-color: rgba(0,0,0,0.7);
+    background-color: #333;
     color: #fff;
 }
 
-button, .form-navigation button {
-    padding: 1rem 2rem;
-    margin-top: 2rem;
-    background-color: #8e44ad;
-    color: #fff;
+/* Formulario */
+#contactForm {
+    margin: 40px auto;
+    text-align: left;
+    background-color: #111;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.25);
+    max-width: 600px;
+    width: 90%;
+    border: 2px solid #00ffff;
+}
+
+#contactForm button {
+    padding: 0.8rem 1.2rem;
+    margin-top: 1.5rem;
+    background-color: #00bcd4;
+    color: #121212;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-button:hover, .form-navigation button:hover {
-    background-color: #9b59b6;
-    transform: scale(1.1);
+#contactForm button:hover {
+    background-color: #00acc1;
+    box-shadow: 0 0 10px #00bcd4;
 }
 
-.form-navigation { display: flex; justify-content: space-between; margin-top: 2rem; }
-
-/* === Videos === */
-.video-final { text-align: center; margin-top: 30px; }
-
-.video-final video, .video-final iframe {
-    border-radius: 12px;
-    box-shadow: 0 0 20px #00ffc8;
+/* Botones de navegación */
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap;
 }
 
-/* === Botones de navegación === */
-.botones-navegacion {
-    text-align: center;
-    margin-top: 50px;
-}
-
-.boton {
-    display: inline-block;
-    margin: 10px;
-    padding: 12px 25px;
-    font-size: 1em;
-    border: 2px solid #00ffc8;
-    border-radius: 8px;
-    color: #00ffc8;
-    background: transparent;
+.back-button,
+.next-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
     text-decoration: none;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    margin: 5px;
 }
 
-.boton:hover {
-    background: #00ffc8;
-    color: #0a0a0a;
-    box-shadow: 0 0 15px #00ffc8;
+.back-button {
+    background-color: #ff00ff;
+    color: #fff;
 }
 
-/* === Pie de página === */
+.back-button:hover {
+    background-color: #00ffff;
+    color: #000;
+}
+
+.next-button {
+    background-color: #00ffff;
+    color: #000;
+}
+
+.next-button:hover {
+    background-color: #ff00ff;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Video */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Footer */
 footer {
     text-align: center;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     background-color: #000;
-    color: #f4436;
-    border-top: 3px solid #f4436;
+    color: #0f0;
+    border-top: 2px solid #0f0;
 }
 
-/* === 🔹 AJUSTE RESPONSIVE PARA CELULARES === */
+/* === Responsive Celular === */
 @media (max-width: 768px) {
-    html { zoom: 0.8; }
-    body { transform: scale(0.95); transform-origin: top center; }
-
-    header h1 { font-size: 3rem; }
-    nav a { font-size: 1rem; padding: 8px 12px; }
-    .content { padding: 2rem; }
-
-    .seccion-con-imagen {
+    header {
         flex-direction: column;
-        text-align: center;
-        padding: 1.5rem;
+    }
+    header h1 {
+        font-size: 1.8rem;
+        margin: 5px 0;
     }
 
-    .texto-seccion, .imagen-seccion { width: 100%; margin: 0 auto; }
-    .imagen-seccion img { max-width: 100%; height: auto; margin-top: 15px; }
+    .layout-container {
+        flex-direction: column;
+        text-align: center;
+    }
 
-    h2 { font-size: 2.2rem; }
-    h3 { font-size: 1.5rem; }
-    p, li { font-size: 0.95rem; }
-    table, th, td { font-size: 0.85rem; }
+    .text-area, .image-area {
+        width: 100%;
+        padding: 0;
+    }
 
-    input, textarea, button, .form-navigation button { font-size: 0.9rem; padding: 0.8rem 1.5rem; }
-    .botones-navegacion .boton { font-size: 0.9rem; padding: 10px 20px; }
+    .image-area {
+        margin-top: 15px;
+    }
 
-    .video-final video, .video-final iframe { width: 100%; height: auto; }
-    footer { font-size: 0.9rem; padding: 1.5rem 0; }
+    .content-block h2 {
+        font-size: 1.8rem;
+    }
+
+    .text-area p {
+        font-size: 0.95rem;
+    }
+
+    th, td {
+        font-size: 0.75rem;
+        padding: 0.5rem;
+    }
+
+    #contactForm {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .nav-buttons {
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .back-button, .next-button {
+        width: 45%;
+        font-size: 0.9rem;
+    }
 }
